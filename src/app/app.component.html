@@ -1,0 +1,50 @@
+<form (ngSubmit)= "onSubmit(reg)" #reg="ngForm">
+
+  <div class="form-group">
+    <label for="studNo">Student Number</label>
+    <input type="text" class="form-control" id="studNo" ngModel name="studNo" required #studNo="ngModel" pattern='/^[A-z]+$/'><br>
+    <div *ngIf = "studNo.invalid && studNo.touched"><h4>Please fill in</h4></div>
+  
+    <label class="studFname">Student First Name</label>
+    <input type="text" class="form-control" id="studFname" ngModel name="studFname" required #studFname="ngModel" pattern='/^[A-z]+$/'><br>
+  <label>Student Last Name</label><input type="text" class="form-control" ngModel name="studLname" required pattern='/^[A-z]+$/'><br>
+  <label>Student Program</label><input type="text" class="form-control" ngModel name="studProg" required pattern='/^[A-z]+$/'><br>
+  <label>Student Year</label><input type="text" class="form-control" ngModel name="studYr" required pattern='/^[A-z]+$/'><br>
+</div>
+i
+
+<div id="options">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="addStudents" (click)="addStudentEntry()">Add Student Entry</button>
+    <button id="listStudents" (click)="listStudents()">List Student</button>
+</div>
+</form>
+
+<div>
+    {{messages}}
+</div>
+
+<div *ngIf="printing">
+  <table id="tab">
+      <thead>
+        <tr>
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Program Enrolled</th>
+            <th>Year</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let studentRecord of studentCollection">
+          <td>{{ studentRecord.studNumber }}</td>
+          <td>{{ studentRecord.studFirstName }}</td>
+          <td>{{ studentRecord.studLastName }}</td>
+          <td>{{ studentRecord.studProgram }}</td>
+          <td>{{ studentRecord.studYear }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

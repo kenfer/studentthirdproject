@@ -1,0 +1,27 @@
+label{
+    display: inline-block;
+    width: 170px;
+    font-family: Verdana, Geneva, Tahoma, sans-erif;
+    font-size: 12pt;
+    margin: 5px;
+    padding-left: 5px;
+    color: white;
+    background-color: black;
+    opacity: .8.6;
+}
+
+div#options{
+    margin: 10px;
+}
+
+tr:nth-child(even){
+    background-color: #c0c0c0;
+}
+div#tab{
+    background-color: yellow;
+
+}
+
+input.ng-invalid .ng-touched{
+	border: 1px solid red;
+}
